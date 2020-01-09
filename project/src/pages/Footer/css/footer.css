@@ -1,0 +1,27 @@
+#footer {
+  padding-top:50px;
+  width:1000px;
+  margin:0 auto 50px auto;
+}
+
+#footer .company {
+  text-align: center;
+}
+
+#footer ul{
+  display: inline-block;
+  margin:0 auto;
+}
+
+#footer ul li {
+  padding: 10px 20px;
+}
+
+#footer .bottom {
+  margin-top:30px;  
+}
+
+#footer .bottom p {
+  text-align: center;
+  padding:5px 0
+}
