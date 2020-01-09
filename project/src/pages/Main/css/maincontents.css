@@ -1,0 +1,49 @@
+.wrap {
+  margin-left:400px;
+  width:calc(100% - 400px);
+  height:100vh;
+}
+
+#maincontents .container {
+  overflow: hidden;
+  width:1000px;
+  margin: 0 auto;
+}
+
+#maincontents .container .title {
+  margin-top:30px;
+  width:100%;
+  font-size:20px;
+}
+
+#maincontents .best-items .item {
+  width:1000px;
+  height:650px;
+  margin:25px auto 0 auto;
+  box-sizing: border-box;
+  border:1px solid blue;
+}
+
+#maincontents .new-items {
+  margin-top:200px;
+  width:1000px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 200px;
+  border-bottom: 1px solid gray;
+}
+
+#maincontents .new-items .item {
+  width:320px;
+  height:400px;
+  margin-top:25px;
+  box-sizing: border-box;
+  border:1px solid blue;
+}
+
+#maincontents .new-items .item figure {
+  width:100%;
+  background: red;
+  height:300px;
+}
