@@ -7,7 +7,7 @@ function Nav() {
     <>
       <div id="left-menu">
         <h1 className="logo">
-          <Link to="/Main">NAMI</Link>
+          <Link to="/">NAMI</Link>
         </h1>
 
         <div className="my-box">
