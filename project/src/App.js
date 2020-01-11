@@ -14,7 +14,7 @@ class App extends Component {
       return (
           <>
             <Router>
-              <Route exact path="/Main" component={MainContainer}/>
+              <Route exact path="/" component={MainContainer}/>
               <Route path="/Login" component={LoginContainer}/>
               <Route path="/Join" component={JoinContainer}/>
               <Route path="/Cart" component={CartContainer}/>
