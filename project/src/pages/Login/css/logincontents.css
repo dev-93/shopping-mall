@@ -1,3 +1,58 @@
-body {
-  background: red;
+.lg_contents {
+  overflow: hidden;
+}
+
+.lg_contents .container{
+  width:377px;
+  margin:200px auto 0 auto;
+}
+
+.lg_contents .container .title {
+  text-align: center;
+}
+
+.lg_contents .container .lg-box {
+  margin-top:30px;
+}
+
+.lg_contents .container .lg-box input {
+  box-sizing: border-box;
+  display: block;
+  margin: 0 auto 10px auto;
+  width:100%;
+  font-size:14px;
+  padding:5px 10px;
+}
+
+.lg_contents .container .lg-box input:last-child {
+  margin-bottom: 0;
+}
+
+.lg_contents .container .lg-box input::placeholder {
+  padding-left:2px;
+}
+
+.lg_contents .container .bt-box {
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top:50px;
+}
+
+.lg_contents .container .bt-box a {
+  box-sizing: border-box;
+  border:1px solid gray;
+  background-color: gray;
+  padding:20px 0;
+  width:calc(100% / 2 - 10px);
+  text-align: center;
+  color:white;
+  transition: ease-in-out .4s;
+}
+
+.lg_contents .container .bt-box a:hover {
+  box-sizing: border-box;
+  background-color: white;
+  border:1px solid gray;
+  color:gray;
 }
