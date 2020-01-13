@@ -6,7 +6,7 @@ import LoginContainer from "./pages/Login/logincontainer";
 import JoinContainer from "./pages/Join/joincontainer";
 import CartContainer from "./pages/Cart/cartcontainer";
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-
+import Nav from "./pages/Nav/nav";
 
 
 class App extends Component {
@@ -14,6 +14,7 @@ class App extends Component {
       return (
           <>
             <Router>
+              <Nav />
               <Route exact path="/" component={MainContainer}/>
               <Route path="/Login" component={LoginContainer}/>
               <Route path="/Join" component={JoinContainer}/>
