@@ -1,0 +1,77 @@
+.jo_contents {
+  overflow: hidden;
+}
+
+.jo_contents .form {
+  width: 400px;
+  margin: 200px auto 0 auto;
+}
+
+.jo_contents .form .title {
+  text-align: center;
+}
+
+.jo_contents .form table {
+  margin-top: 30px;
+}
+
+.jo_contents table caption {
+  display: none;
+}
+
+.jo_contents .form table tr {
+  display: block;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid gray;
+}
+
+.jo_contents .form table tr:last-child {
+  margin-bottom: 0;
+}
+
+.jo_contents .form table tr th {
+  text-align: left;
+  width: 130px;
+  font-size: 15px;
+  font-weight: 600;
+  color: black;
+}
+
+.jo_contents .form table tr td input {
+  box-sizing: border-box;
+  width: 270px;
+  font-size: 15px;
+  padding: 3px;
+}
+
+
+.jo_contents .form table tr td div p {
+  font-size: 10px;
+  padding-top:5px;
+}
+
+.jo_contents .form table .phone select {
+  box-sizing: border-box;
+  padding: 2px 0;
+  width: 80px;
+}
+
+.jo_contents .form table .phone input {
+  width: 88px;
+}
+
+.jo_contents .form .bt_join {
+  display: block;
+  margin: 50px auto 0 auto;
+  border: none;
+  background-color: #333;
+  padding: 10px 20px;
+  width:100%;
+  color: white;
+  transition: ease-in-out .4s;
+}
+
+.jo_contents .form .bt_join:hover {
+  background-color: #000000;
+}
