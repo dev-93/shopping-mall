@@ -1,0 +1,64 @@
+.ca_contents {
+  overflow: hidden;
+}
+
+.ca_contents .contents {
+  text-align: center;
+}
+
+.ca_contents .contents .title{
+  display: inline-block;
+  margin-top: 200px;
+}
+
+.ca_contents .contents .container {
+  margin-top: 30px;
+}
+
+.ca_contents .contents .container .tab_box {
+  display: inline-block;
+}
+
+.ca_contents .contents .container .tab_box::after {
+  content:"";
+  display: block;
+  clear: both;
+}
+
+.ca_contents .contents .container .tab_box .tab {
+  float: left;
+  margin-right: 20px;
+  padding-bottom:8px;
+  border-bottom:1px solid gray;
+}
+
+.ca_contents .contents .container .tab_box .tab:last-child {
+  margin-right:0;
+}
+
+.ca_contents .contents .container .cart_box {
+  margin-top: 30px;
+  padding:20px;
+}
+
+.ca_contents .contents .container .bt_box {
+  margin-top: 50px;
+}
+
+.ca_contents .contents .container .bt_box > button {
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  border:none;
+  background-color: #333;
+  color:white;
+  margin-right:20px;
+}
+
+.ca_contents .contents .container .bt_box > button:last-child {
+  margin-right:0;
+}
+
+.ca_contents .contents .container .bt_box > button:hover {
+  background-color: #000;
+}
