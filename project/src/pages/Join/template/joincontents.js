@@ -13,7 +13,7 @@ function JoinContents(){
               <tr>
                 <th scope="row">아이디</th>
                 <td>
-                  <input minlength="4" maxlength="16"class="inputTypeText" type="text" />
+                  <input minlength="4" maxlength="16" class="inputTypeText" type="text" />
                   <div>
                     <p className="error">아이디를 입력해주세요</p>
                     <p clasName="guide">영문 소문자/숫자, 4-16자</p>
