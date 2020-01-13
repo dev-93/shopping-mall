@@ -5,7 +5,6 @@ import JoinContents from "./template/joincontents";
 function JoinContainer() {
   return (
     <>
-      <Nav />
       <JoinContents />
     </>
   );

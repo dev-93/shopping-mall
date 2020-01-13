@@ -5,7 +5,6 @@ import MainContents from "./template/maincontents";
 function MainContainer() {
   return (
     <>
-      <Nav />
       <MainContents />
     </>
   );

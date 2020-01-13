@@ -5,7 +5,6 @@ import LoginContents from "./template/logincontents";
 function LoginContainer(){
   return(
     <>
-      <Nav />
       <LoginContents />
     </>
   )
