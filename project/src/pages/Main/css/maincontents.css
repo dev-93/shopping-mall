@@ -36,14 +36,66 @@
 
 #maincontents .new-items .item {
   width:320px;
-  height:400px;
+  min-height:400px;
   margin-top:25px;
   box-sizing: border-box;
   border:1px solid blue;
+  position: relative;
 }
 
-#maincontents .new-items .item figure {
+#maincontents .new-items .item .cloth-box {
   width:100%;
   background: red;
   height:300px;
+  overflow: hidden;
+}
+
+#maincontents .new-items .item .cloth-box img {
+  width: 100%;
+}
+
+#maincontents .new-items .item .detail-box {
+  padding: 15px 10px;
+  overflow: hidden;
+}
+
+#maincontents .new-items .item .detail-box > p:not(:last-child) {
+  margin-bottom:10px;
+}
+
+#maincontents .new-items .item .detail-box .name {
+  font-weight: 600;
+}
+
+#maincontents .new-items .item .detail-box .price {
+  font-size:14px;
+  font-weight: 500;
+}
+
+#maincontents .new-items .item .detail-box .details {
+  color:gray;
+  font-size:12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width:300px;
+}
+
+#maincontents .new-items .item input[type="checkbox"] + label {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: pink;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#maincontents .new-items .item input[type="checkbox"]:checked + label {
+  background-color: purple;
+}
+
+#maincontents .new-items .item input[type="checkbox"] {
+  display: none;
 }
