@@ -34,12 +34,18 @@
   border-bottom: 1px solid gray;
 }
 
+#maincontents .new-items .item-box {
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 #maincontents .new-items .item {
   width:320px;
   min-height:400px;
   margin-top:25px;
   box-sizing: border-box;
-  border:1px solid blue;
   position: relative;
 }
 
