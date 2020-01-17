@@ -1,15 +1,16 @@
 import React from 'react';
 import "../css/maincontents.css";
 import Footer from "../../Footer/footer";
+import {Link} from "react-router-dom";
 
 function Item({name, image, price, details}) {
   return (
     <li className="item">
-      <a className="cloth-box">
+      <Link to="/item" className="cloth-box">
         <img src={image} alt={name}/>
-      </a>
+      </Link>
       <div className="detail-box">
-        <p className="name"><a href="#">{name}</a></p>
+        <p className="name">{name}</p>
         <p className="price"><span className="num">{price}</span>원</p>
         <p className="details">{details}</p>
       </div>
@@ -53,7 +54,7 @@ const ItemList = [
     name: "베이즈 프리미엄 니트지 긴팔티",
     image: "http://new-more.co.kr/web/product/big/20200113/636498baaef517566208f3fe6d16cfec.webp",
     price: "19,900",
-    details: "트렌디하고 내츄럴한 루즈핏 라인의 싱글수트.",
+    details: "트렌디하고 내츄럴한 루즈핏 라인의 긴팔티",
   },
   {
     id:6,
@@ -77,7 +78,13 @@ function MainContents(){
           <p className="title">#new items</p>
           <ul className="item-box">
             {ItemList.map(cloth => (
-              <Item key={cloth.id} name={cloth.name} image={cloth.image} price={cloth.price} details={cloth.details} />
+              <Item
+                key={cloth.id}
+                name={cloth.name}
+                image={cloth.image}
+                price={cloth.price}
+                details={cloth.details}
+              />
             ))}
           </ul>
         </div>

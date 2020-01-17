@@ -1,9 +1,3 @@
-.wrap {
-  margin-left:400px;
-  width:calc(100% - 400px);
-  height:100vh;
-}
-
 #maincontents .container {
   overflow: hidden;
   width:1000px;
