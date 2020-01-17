@@ -13,7 +13,7 @@ function JoinContents(){
               <tr>
                 <th scope="row">아이디</th>
                 <td>
-                  <input minlength="4" maxlength="16" class="inputTypeText" type="text" />
+                  <input minLength="4" maxLength="16" class="inputTypeText" type="text" />
                   <div>
                     <p className="error">아이디를 입력해주세요</p>
                     <p clasName="guide">영문 소문자/숫자, 4-16자</p>
@@ -23,7 +23,7 @@ function JoinContents(){
               <tr>
                 <th scope="row">비밀번호</th>
                 <td>
-                  <input autocomplete="off" minlength="4" maxlength="16" type="password"/>
+                  <input autocomplete="off" minLength="4" maxLength="16" type="password"/>
                   <div>
                     <p clasName="guide">영문 소문자/숫자, 4-16자</p>
                   </div>
@@ -32,7 +32,7 @@ function JoinContents(){
               <tr>
                 <th scope="row">비밀번호 확인</th>
                 <td>
-                  <input autocomplete="off" minlength="4" maxlength="16" type="password"/>
+                  <input autocomplete="off" minLength="4" maxLength="16" type="password"/>
                 </td>
               </tr>
               <tr className="phone">
@@ -47,9 +47,9 @@ function JoinContents(){
                     <option value="019">019</option>
                   </select>
                   -
-                  <input maxlength="4" type="text" />
+                  <input maxLength="4" type="text" />
                   -
-                  <input maxlength="4" type="text" />
+                  <input maxLength="4" type="text" />
                 </td>
               </tr>
             </tbody>
