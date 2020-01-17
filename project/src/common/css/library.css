@@ -92,3 +92,9 @@
 .vertical-align-bottom {
   vertical-align:bottom;
 }
+
+.wrap {
+  margin-left:400px;
+  width:calc(100% - 400px);
+  height:100vh;
+}
