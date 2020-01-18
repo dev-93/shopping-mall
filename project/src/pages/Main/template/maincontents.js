@@ -1,7 +1,9 @@
 import React from 'react';
 import "../css/maincontents.css";
 import Footer from "../../Footer/footer";
+import Fade from "../../../components/slider/slider";
 import {Link} from "react-router-dom";
+
 
 function Item({name, image, price, details}) {
   return (
@@ -71,7 +73,7 @@ function MainContents(){
       <div id="maincontents" className="wrap">
         <div className="best-items container">
           <p className="title">#Best items</p>
-          <div className="item"></div>
+          <Fade />
         </div>
 
         <div className="new-items container">

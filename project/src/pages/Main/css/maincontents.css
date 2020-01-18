@@ -10,9 +10,8 @@
   font-size:20px;
 }
 
-#maincontents .best-items .item {
+#maincontents .best-items .bt-item {
   width:1000px;
-  height:650px;
   margin:25px auto 0 auto;
   box-sizing: border-box;
   border:1px solid blue;
