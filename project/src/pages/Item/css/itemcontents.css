@@ -59,6 +59,19 @@
   min-width: 80px;
 }
 
+/* .it_contents .container .info-box .detail-box .amount input {
+  width: 90px;
+}  */
+
+.it_contents .container .info-box .detail-box .amount button {
+  border:1px solid gray;
+}
+
+.it_contents .container .info-box .detail-box .amount .num {
+  margin-right:20px;
+}
+
+
 .it_contents .container .wish {
   position: absolute;
   right:0;

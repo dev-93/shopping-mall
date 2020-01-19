@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "../css/itemcontents.css";
 
-const ItemContents = () => {
+const ItemContents = (props) => {
+  const [Item, setItem] = useState(0);
+  const Plus = () =>  setItem(Item + 1);
+  const Minus = () => setItem(Item - 1);
   return (
     <>
       <div className="wrap it_contents">
@@ -37,6 +40,15 @@ const ItemContents = () => {
                   <option>option</option>
                   <option>----------</option>
                 </select>
+              </p>
+              <p className="amount">
+                <span>Amount</span>
+                <span>
+                  {/* <input type="number" placeholder="1" min="0" max="5" required/> */}
+                  <span className="num">{Item}</span>
+                  <button type="button" onClick={Plus}>+</button>
+                  <button type="button" onClick={Minus}>-</button>
+                </span>
               </p>
             </div>
           </div>
