@@ -13,13 +13,13 @@ function Nav() {
         <div className="my-box">
           <ul className="table">
             <li className="table-cell">
-              <Link to="/Login">LOGIN</Link>
+              <Link to="/login">LOGIN</Link>
             </li>
             <li className="table-cell">
-              <Link to="/Join">JOIN</Link>
+              <Link to="/join">JOIN</Link>
             </li>
             <li className="table-cell">
-              <Link to="/Cart">Cart</Link>
+              <Link to="/cart">Cart</Link>
             </li>
           </ul>
         </div>
