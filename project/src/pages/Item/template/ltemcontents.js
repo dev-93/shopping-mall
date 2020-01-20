@@ -1,10 +1,14 @@
 import React, {useState} from 'react';
 import "../css/itemcontents.css";
+import {useParams} from "react-router-dom";
+
 
 const ItemContents = (props) => {
   const [Item, setItem] = useState(0);
   const Plus = () =>  setItem(Item + 1);
   const Minus = () => setItem(Item - 1);
+
+  const {id} = useParams();
   return (
     <>
       <div className="wrap it_contents">
@@ -15,7 +19,7 @@ const ItemContents = (props) => {
 
           <div className="info-box">
             <div className="title-box">
-              <p className="name">클랫 밴딩 와이드 생지데님</p>
+              <p className="name">{id}</p>
               <p className="info">트렌디하고 내츄럴한 무드의 밴딩 와이드 생지데님</p>
             </div>
 
