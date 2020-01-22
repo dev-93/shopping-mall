@@ -1,38 +1,57 @@
 import React from "react";
-import "../css/joincontents.css"
+import "../css/joincontents.css";
 
 function JoinContents(){
+
+  const USER_ID_LS = "userID";
+
+  function saveId(text){
+    localStorage.setItem(USER_ID_LS, text);
+  }
+
+  function submitId(){
+    const USER_ID = document.querySelector(".user-id");
+    const IdValue = USER_ID.value;
+
+    if(IdValue === ""){
+      alert("아이디를 입력해주세요.");
+    } else {
+      alert("회원가입이 완료되었습니다.");
+      saveId(IdValue);
+    }
+  }
+
   return(
     <>
       <div className="wrap jo_contents">
         <div className="form">
           <h3 className="title">Join Us</h3>
-          <table border="1" summary>
+          <table border="1">
             <caption>회원 기본정보</caption>
             <tbody>
               <tr>
                 <th scope="row">아이디</th>
-                <td>
-                  <input minLength="4" maxLength="16" class="inputTypeText" type="text" />
+                <td className="input-container">
+                  <input minLength="4" maxLength="16" className="user-id" type="text" />
                   <div>
                     <p className="error">아이디를 입력해주세요</p>
-                    <p clasName="guide">영문 소문자/숫자, 4-16자</p>
+                    <p className="guide">영문 소문자/숫자, 4-16자</p>
                   </div>
                 </td>
               </tr>
               <tr>
                 <th scope="row">비밀번호</th>
                 <td>
-                  <input autocomplete="off" minLength="4" maxLength="16" type="password"/>
+                  <input autoComplete="off" minLength="4" maxLength="16" className="user-pw" type="password"/>
                   <div>
-                    <p clasName="guide">영문 소문자/숫자, 4-16자</p>
+                    <p className="guide">영문 소문자/숫자, 4-16자</p>
                   </div>
                 </td>
               </tr>
               <tr>
                 <th scope="row">비밀번호 확인</th>
                 <td>
-                  <input autocomplete="off" minLength="4" maxLength="16" type="password"/>
+                  <input autoComplete="off" minLength="4" maxLength="16" type="password"/>
                 </td>
               </tr>
               <tr className="phone">
@@ -54,7 +73,7 @@ function JoinContents(){
               </tr>
             </tbody>
           </table>
-          <button type="button" className="bt_join">가입하기</button>
+          <button type="button" className="bt_join" onClick={submitId}>가입하기</button>
         </div>
       </div>
     </>
