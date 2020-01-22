@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import "../css/itemcontents.css";
 import {useParams} from "react-router-dom";
+import ItemList from "../../../components/itemlist/itemlist";
 
 
 const ItemContents = (props) => {
@@ -14,35 +15,38 @@ const ItemContents = (props) => {
       <div className="wrap it_contents">
         <div className="container">
           <div className="cloth-box">
-            <img src={require("../../Main/img/test_1.jpg")} alt="이미지 이름"/>
+            <img src={ItemList[id].image} alt="이미지 이름"/>
           </div>
 
           <div className="info-box">
             <div className="title-box">
-              <p className="name">{id}</p>
-              <p className="info">트렌디하고 내츄럴한 무드의 밴딩 와이드 생지데님</p>
+              <p className="name">{ItemList[id].name}</p>
+              <p className="info">{ItemList[id].details}</p>
             </div>
 
             <div className="detail-box">
               <p className="price">
                 <span>Price</span>
-                <span className="num">37,000</span>
+                <span className="num">{ItemList[id].price}</span>
               </p>
               <p className="color">
                 <span>Color</span>
                 <select>
-                  <option>option</option>
-                  <option>black</option>
-                  <option>skyblue</option>
-                  <option>white</option>
-                  <option>blown</option>
+                  <option value="*" selected>OPTION</option>
+                  <option value="**" disabled>-------------</option>
+                  {ItemList[id].colors.map(color => {
+                    return <option>{color}</option>
+                  })}
                 </select>
               </p>
               <p className="size">
                 <span>Size</span>
                 <select>
-                  <option>option</option>
-                  <option>----------</option>
+                  <option value="*" selected>OPTION</option>
+                  <option value="**" disabled>-------------</option>
+                  {ItemList[id].sizes.map(size => {
+                    return <option>{size}</option>
+                  })}
                 </select>
               </p>
               <p className="amount">

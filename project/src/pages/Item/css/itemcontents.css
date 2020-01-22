@@ -56,7 +56,7 @@
 
 .it_contents .container .info-box .detail-box p select {
   padding: 2px 10px;
-  min-width: 80px;
+  width: 100px;
 }
 
 /* .it_contents .container .info-box .detail-box .amount input {
