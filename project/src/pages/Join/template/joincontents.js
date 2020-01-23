@@ -4,20 +4,48 @@ import "../css/joincontents.css";
 function JoinContents(){
 
   const USER_ID_LS = "userID";
+  // const USER_PW_LS = "userPW";
 
+  // function savePw(text){
+  //   localStorage.setItem(USER_PW_LS, text);
+  // }
+
+  // function submitPw(){
+  //   const USER_PW = document.querySelector(".user-pw");
+  //   const PwValue = USER_PW.value;
+
+  //   if(PwValue === ""){
+  //     alert("비밀번호를 입력해주세요.");
+  //   } else {
+  //     alert("회원가입이 완료되었습니다.");
+  //     savePw(PwValue);
+  //   }
+  // }
+ 
   function saveId(text){
     localStorage.setItem(USER_ID_LS, text);
   }
 
+  function countId(){
+    let USER_ID = document.querySelector(".user-id");
+    let IdValue = USER_ID.value;
+
+    if (IdValue.length < 4 || IdValue.length > 16){
+      alert("아이디 폼을 맞춰주세요.")
+    } else {
+      alert("비밀번호로 넘어갑니다.")
+      USER_ID.value = "";
+    }
+  }
+
   function submitId(){
-    const USER_ID = document.querySelector(".user-id");
-    const IdValue = USER_ID.value;
+    let USER_ID = document.querySelector(".user-id");
+    let IdValue = USER_ID.value;
 
     if(IdValue === ""){
       alert("아이디를 입력해주세요.");
     } else {
-      alert("회원가입이 완료되었습니다.");
-      saveId(IdValue);
+      countId(IdValue);
     }
   }
 
@@ -51,7 +79,7 @@ function JoinContents(){
               <tr>
                 <th scope="row">비밀번호 확인</th>
                 <td>
-                  <input autoComplete="off" minLength="4" maxLength="16" type="password"/>
+                  <input autoComplete="off" minLength="4" maxLength="16" className="user-pw-check" type="password"/>
                 </td>
               </tr>
               <tr className="phone">
