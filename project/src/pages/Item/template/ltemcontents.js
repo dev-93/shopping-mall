@@ -35,7 +35,7 @@ const ItemContents = (props) => {
                   <option value="*" selected>OPTION</option>
                   <option value="**" disabled>-------------</option>
                   {ItemList[id].colors.map(color => {
-                    return <option>{color}</option>
+                    return <option>{color}</option>;
                   })}
                 </select>
               </p>
