@@ -3,29 +3,53 @@ import "../css/joincontents.css";
 
 function JoinContents(){
 
-  const USER_ID_LS = "userID";
-  // const USER_PW_LS = "userPW";
+  // const USER_INFO = "userInfo";
 
-  // function savePw(text){
-  //   localStorage.setItem(USER_PW_LS, text);
+  // function saveInfo(text){
+  //   localStorage.setItem(USER_INFO, text);
   // }
 
-  // function submitPw(){
-  //   const USER_PW = document.querySelector(".user-pw");
-  //   const PwValue = USER_PW.value;
+  function comparePw(){
+    let USER_ID = document.querySelector(".user-id");
+    let USER_PW = document.querySelector(".user-pw");
+    let USER_PW_check = document.querySelector(".user-pw-check");
 
-  //   if(PwValue === ""){
-  //     alert("비밀번호를 입력해주세요.");
-  //   } else {
-  //     alert("회원가입이 완료되었습니다.");
-  //     savePw(PwValue);
-  //   }
-  // }
- 
-  function saveId(text){
-    localStorage.setItem(USER_ID_LS, text);
+    let PwValue = USER_PW.value;
+    let PwCheckValue = USER_PW_check.value;
+
+    if(PwValue !== PwCheckValue) {
+      alert("비밀번호를 확인해주세요");
+    } else {
+      // saveInfo();
+      alert("회원가입이 완료되었습니다.");
+      USER_ID.value  = "";
+      USER_PW.value  = "";
+      USER_PW_check.value  = "";
+    }
   }
 
+  function countPw(){
+    let USER_PW = document.querySelector(".user-pw");
+    let PwValue = USER_PW.value;
+
+    if (PwValue.length < 4 || PwValue.length > 16){
+      alert("비밀번호 폼을 맞춰주세요.")
+    } else {
+      comparePw();
+    }
+  }
+
+  function submitPw(){
+    let USER_PW = document.querySelector(".user-pw");
+    let PwValue = USER_PW.value;
+
+    if(PwValue === ""){
+      alert("비밀번호를 입력해주세요.");
+    } else {
+      countPw();
+    }
+  }
+ 
   function countId(){
     let USER_ID = document.querySelector(".user-id");
     let IdValue = USER_ID.value;
@@ -33,8 +57,7 @@ function JoinContents(){
     if (IdValue.length < 4 || IdValue.length > 16){
       alert("아이디 폼을 맞춰주세요.")
     } else {
-      alert("비밀번호로 넘어갑니다.")
-      USER_ID.value = "";
+      submitPw();
     }
   }
 
