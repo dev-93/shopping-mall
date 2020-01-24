@@ -3,11 +3,24 @@ import "../css/joincontents.css";
 
 function JoinContents(){
 
-  // const USER_INFO = "userInfo";
+  const USER_INFO = "userInfo";
 
-  // function saveInfo(text){
-  //   localStorage.setItem(USER_INFO, text);
-  // }
+  const userInfo = [];
+
+  function saveInfo(){
+    let USER_ID = document.querySelector(".user-id");
+    let USER_PW = document.querySelector(".user-pw");
+    
+    let IdValue = USER_ID.value;
+    let PwValue = USER_PW.value;
+
+    const Obj = {
+      Id: IdValue,
+      Pw: PwValue
+    }
+
+    localStorage.setItem(USER_INFO, JSON.stringify(Obj));
+  }
 
   function comparePw(){
     let USER_ID = document.querySelector(".user-id");
@@ -18,9 +31,9 @@ function JoinContents(){
     let PwCheckValue = USER_PW_check.value;
 
     if(PwValue !== PwCheckValue) {
-      alert("비밀번호를 확인해주세요");
+      alert("비밀번호가 일치하지 않습니다.");
     } else {
-      // saveInfo();
+      saveInfo();
       alert("회원가입이 완료되었습니다.");
       USER_ID.value  = "";
       USER_PW.value  = "";
