@@ -3,23 +3,26 @@ import "../css/joincontents.css";
 
 function JoinContents(){
 
-  const USER_INFO = "userInfo";
+  let USER_INFO = "userInfo";
 
   const userInfo = [];
 
   function saveInfo(){
     let USER_ID = document.querySelector(".user-id");
     let USER_PW = document.querySelector(".user-pw");
-    
+
     let IdValue = USER_ID.value;
     let PwValue = USER_PW.value;
+    let newId = userInfo.length + 1;
 
     const Obj = {
       Id: IdValue,
-      Pw: PwValue
-    }
-
-    localStorage.setItem(USER_INFO, JSON.stringify(Obj));
+      Pw: PwValue,
+      key: newId
+    };
+    
+    userInfo.push(Obj);
+    localStorage.setItem(USER_INFO, JSON.stringify(userInfo));
   }
 
   function comparePw(){
@@ -75,12 +78,24 @@ function JoinContents(){
   }
 
   function submitId(){
+    let USER_INFO = "userInfo";
+
     let USER_ID = document.querySelector(".user-id");
     let IdValue = USER_ID.value;
+    let loadInfo = localStorage.getItem("userInfo");
+    let parsedInfo = JSON.parse(loadInfo);
+
+    let existId = parsedInfo.Id;
+    console.log(existId);
+
 
     if(IdValue === ""){
       alert("아이디를 입력해주세요.");
-    } else {
+    // } else if(IdValue === existId){
+
+    //   alert("이미 있는 아이디 입니다.");
+    }
+    else {
       countId(IdValue);
     }
   }
@@ -98,7 +113,7 @@ function JoinContents(){
                 <td className="input-container">
                   <input minLength="4" maxLength="16" className="user-id" type="text" />
                   <div>
-                    <p className="error">아이디를 입력해주세요</p>
+                    <p className="id-error">아이디를 입력해주세요</p>
                     <p className="guide">영문 소문자/숫자, 4-16자</p>
                   </div>
                 </td>
@@ -116,6 +131,9 @@ function JoinContents(){
                 <th scope="row">비밀번호 확인</th>
                 <td>
                   <input autoComplete="off" minLength="4" maxLength="16" className="user-pw-check" type="password"/>
+                  <div>
+                    <p className="pw-error"></p>
+                  </div>
                 </td>
               </tr>
               <tr className="phone">
