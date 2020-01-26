@@ -32,7 +32,7 @@ const ItemContents = (props) => {
               <p className="color">
                 <span>Color</span>
                 <select>
-                  <option value="*" selected>OPTION</option>
+                  <option value="*" defaultValue>OPTION</option>
                   <option value="**" disabled>-------------</option>
                   {ItemList[id].colors.map(color => {
                     return <option>{color}</option>;
@@ -42,7 +42,7 @@ const ItemContents = (props) => {
               <p className="size">
                 <span>Size</span>
                 <select>
-                  <option value="*" selected>OPTION</option>
+                  <option value="*" defaultValue>OPTION</option>
                   <option value="**" disabled>-------------</option>
                   {ItemList[id].sizes.map(size => {
                     return <option>{size}</option>
