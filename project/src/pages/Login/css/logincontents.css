@@ -39,7 +39,7 @@
   margin-top:50px;
 }
 
-.lg_contents .container .bt-box a {
+.lg_contents .container .bt-box .bt {
   box-sizing: border-box;
   border:1px solid gray;
   background-color: #333;
@@ -50,7 +50,7 @@
   transition: ease-in-out .4s;
 }
 
-.lg_contents .container .bt-box a:hover {
+.lg_contents .container .bt-box .bt:hover {
   box-sizing: border-box;
   background-color: #000;
 }
