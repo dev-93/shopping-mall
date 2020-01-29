@@ -5,23 +5,24 @@ import {Link} from "react-router-dom";
 function LoginContents(){
 
   function getInfo(){
-    const USER_INFO = "userInfo";
+    let loginId = document.querySelector(".login-id");
+    let loginIdValue = loginId.value;
+
+    let USER_INFO = "userInfo";
     
-    const loadInfo = localStorage.getItem(USER_INFO);
-    const parseloadInfo = JSON.parse(loadInfo);
+    let loadInfo = localStorage.getItem(USER_INFO);
+    let parseInfo = JSON.parse(loadInfo);
 
-    let i;
-    let InfoLength = parseloadInfo.length;
+    const idStore = parseInfo.filter((ele, index) => console.log(ele.Id));
+    console.log(idStore);
+   
+    // const compareId = (loginIdValue === idStore) ? alert("LS에 아이디가 있습니다") : alert("LS에 아이디가 없습니다.");
 
-    for (i=0; i < InfoLength; i++ ){
-      console.log(parseloadInfo[i].Id);
-      console.log(parseloadInfo[i].Pw);
-    };
   }
 
   function checkPw(){
-    const loginPw = document.querySelector(".login-pw");
-    const loginPwValue = loginPw.value;
+    let loginPw = document.querySelector(".login-pw");
+    let loginPwValue = loginPw.value;
     
     if(loginPwValue === "") {
       alert("비밀번호를 입력해주세요.");
@@ -32,8 +33,8 @@ function LoginContents(){
   }
 
   function checkId(){
-    const loginId = document.querySelector(".login-id");
-    const loginIdValue = loginId.value;
+    let loginId = document.querySelector(".login-id");
+    let loginIdValue = loginId.value;
     
     if(loginIdValue === "") {
       alert("아이디를 입력해주세요.");
