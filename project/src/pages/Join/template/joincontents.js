@@ -85,8 +85,6 @@ function JoinContents(){
     let loadInfo = localStorage.getItem("userInfo");
     let parsedInfo = JSON.parse(loadInfo);
 
-    let existId = parsedInfo.Id;
-    console.log(existId);
 
 
     if(IdValue === ""){
