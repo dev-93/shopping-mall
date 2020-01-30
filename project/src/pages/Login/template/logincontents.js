@@ -3,21 +3,30 @@ import "../css/logincontents.css";
 import {Link} from "react-router-dom";
 
 function LoginContents(){
+  const USER_INFO = "userInfo";
+
+  function comparePw(filtered){
+    let filteredPw = filtered[0].Pw;
+
+    let loginPw = document.querySelector(".login-pw");
+    let loginPwValue = loginPw.value;
+
+    loginPwValue === filteredPw ? alert(`${filtered[0].Id}님 환영합니다.`) : alert("아이디 또는 비밀번호가 일치하지 않습니다.");
+  }
 
   function getInfo(){
     let loginId = document.querySelector(".login-id");
     let loginIdValue = loginId.value;
 
-    let USER_INFO = "userInfo";
     
     let loadInfo = localStorage.getItem(USER_INFO);
     let parseInfo = JSON.parse(loadInfo);
 
-    const idStore = parseInfo.filter((ele, index) => console.log(ele.Id));
-    console.log(idStore);
-   
-    // const compareId = (loginIdValue === idStore) ? alert("LS에 아이디가 있습니다") : alert("LS에 아이디가 없습니다.");
-
+    
+    let filtered = parseInfo.filter(element => element.Id === loginIdValue) ;
+    
+    // filtered가 빈배열의 값을 가지면 alert("아이디 또는 비밀번호가 일치하지 않습니다.")
+    filtered == "" ? alert("아이디 또는 비밀번호가 일치하지 않습니다.") : comparePw(filtered) ;
   }
 
   function checkPw(){
