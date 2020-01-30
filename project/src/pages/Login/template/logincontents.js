@@ -5,31 +5,22 @@ import {Link} from "react-router-dom";
 function LoginContents(){
   const USER_INFO = "userInfo";
 
-  function comparePw(filtered){
+  function comparePw(filtered, loginPwValue){
     let filteredPw = filtered[0].Pw;
-
-    let loginPw = document.querySelector(".login-pw");
-    let loginPwValue = loginPw.value;
 
     loginPwValue === filteredPw ? alert(`${filtered[0].Id}님 환영합니다.`) : alert("아이디 또는 비밀번호가 일치하지 않습니다.");
   }
 
-  function getInfo(){
-    let loginId = document.querySelector(".login-id");
-    let loginIdValue = loginId.value;
-
-    
+  function getInfo(loginIdValue, loginPwValue){
     let loadInfo = localStorage.getItem(USER_INFO);
     let parseInfo = JSON.parse(loadInfo);
-
     
-    let filtered = parseInfo.filter(element => element.Id === loginIdValue) ;
+    let filtered = parseInfo.filter(element => element.Id === loginIdValue);
     
-    // filtered가 빈배열의 값을 가지면 alert("아이디 또는 비밀번호가 일치하지 않습니다.")
-    filtered == "" ? alert("아이디 또는 비밀번호가 일치하지 않습니다.") : comparePw(filtered) ;
+    filtered == "" ? alert("아이디 또는 비밀번호가 일치하지 않습니다.") : comparePw(filtered, loginPwValue);
   }
 
-  function checkPw(){
+  function checkPw(loginIdValue){
     let loginPw = document.querySelector(".login-pw");
     let loginPwValue = loginPw.value;
     
@@ -37,7 +28,7 @@ function LoginContents(){
       alert("비밀번호를 입력해주세요.");
     }
     else {
-      getInfo();
+      getInfo(loginIdValue, loginPwValue);
     }
   }
 
@@ -49,7 +40,7 @@ function LoginContents(){
       alert("아이디를 입력해주세요.");
     }
     else {
-      checkPw();
+      checkPw(loginIdValue);
     }
   }
  
