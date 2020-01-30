@@ -86,7 +86,6 @@ function JoinContents(){
     let parsedInfo = JSON.parse(loadInfo);
 
 
-
     if(IdValue === ""){
       alert("아이디를 입력해주세요.");
     // } else if(IdValue === existId){
@@ -112,7 +111,7 @@ function JoinContents(){
                   <input minLength="4" maxLength="16" className="user-id" type="text" />
                   <div>
                     <p className="id-error">아이디를 입력해주세요</p>
-                    <p className="guide">영문 소문자/숫자, 4-16자</p>
+                    <p className="guide">한글/영문/숫자, 4-16자</p>
                   </div>
                 </td>
               </tr>
@@ -121,7 +120,7 @@ function JoinContents(){
                 <td>
                   <input autoComplete="off" minLength="4" maxLength="16" className="user-pw" type="password"/>
                   <div>
-                    <p className="guide">영문 소문자/숫자, 4-16자</p>
+                    <p className="guide">한글/영문/숫자, 4-16자</p>
                   </div>
                 </td>
               </tr>
