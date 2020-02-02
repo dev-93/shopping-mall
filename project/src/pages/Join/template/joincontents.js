@@ -2,17 +2,11 @@ import React from "react";
 import "../css/joincontents.css";
 
 function JoinContents(){
-
   const USER_INFO = "userInfo";
 
   const userInfo = [];
 
-  function saveInfo(){
-    let USER_ID = document.querySelector(".user-id");
-    let USER_PW = document.querySelector(".user-pw");
-
-    let IdValue = USER_ID.value;
-    let PwValue = USER_PW.value;
+  function saveInfo(IdValue, PwValue){
     let newId = userInfo.length + 1;
 
     const Obj = {
@@ -25,18 +19,16 @@ function JoinContents(){
     localStorage.setItem(USER_INFO, JSON.stringify(userInfo));
   }
 
-  function comparePw(){
+  function comparePw(IdValue, PwValue){
+    let USER_PW_check = document.querySelector(".user-pw-check");
+    let PwCheckValue = USER_PW_check.value;
     let USER_ID = document.querySelector(".user-id");
     let USER_PW = document.querySelector(".user-pw");
-    let USER_PW_check = document.querySelector(".user-pw-check");
-
-    let PwValue = USER_PW.value;
-    let PwCheckValue = USER_PW_check.value;
 
     if(PwValue !== PwCheckValue) {
       alert("비밀번호가 일치하지 않습니다.");
     } else {
-      saveInfo();
+      saveInfo(IdValue, PwValue);
       alert("회원가입이 완료되었습니다.");
       USER_ID.value  = "";
       USER_PW.value  = "";
@@ -44,36 +36,30 @@ function JoinContents(){
     }
   }
 
-  function countPw(){
-    let USER_PW = document.querySelector(".user-pw");
-    let PwValue = USER_PW.value;
-
+  function countPw(IdValue, PwValue){
     if (PwValue.length < 4 || PwValue.length > 16){
       alert("비밀번호 폼을 맞춰주세요.")
     } else {
-      comparePw();
+      comparePw(IdValue, PwValue);
     }
   }
 
-  function submitPw(){
+  function submitPw(IdValue){
     let USER_PW = document.querySelector(".user-pw");
     let PwValue = USER_PW.value;
-
+    
     if(PwValue === ""){
       alert("비밀번호를 입력해주세요.");
     } else {
-      countPw();
+      countPw(IdValue, PwValue);
     }
   }
  
-  function countId(){
-    let USER_ID = document.querySelector(".user-id");
-    let IdValue = USER_ID.value;
-
+  function countId(IdValue){
     if (IdValue.length < 4 || IdValue.length > 16){
       alert("아이디 폼을 맞춰주세요.")
     } else {
-      submitPw();
+      submitPw(IdValue);
     }
   }
 
@@ -81,11 +67,15 @@ function JoinContents(){
     let USER_ID = document.querySelector(".user-id");
     let IdValue = USER_ID.value;
 
+    let loadInfo = localStorage.getItem("userInfo");
+    let parseInfo = JSON.parse(loadInfo);
+    
+    let filtered = parseInfo.filter(element => element.Id === IdValue);
     if(IdValue === ""){
       alert("아이디를 입력해주세요.");
     }
     else {
-      countId(IdValue);
+      filtered != "" ? alert(`${IdValue}는 사용중인 아이디입니다.`) : countId(IdValue);
     }
   }
 
@@ -98,7 +88,7 @@ function JoinContents(){
     let parseInfo = JSON.parse(loadInfo);
     
     let filtered = parseInfo.filter(element => element.Id === IdValue);
-    console.log(filtered);
+
     if(filtered != ""){
       IdError.innerHTML = "이미 있는 아이디입니다.";
       IdError.style.color = "red";
