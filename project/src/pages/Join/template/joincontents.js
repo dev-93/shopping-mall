@@ -3,7 +3,7 @@ import "../css/joincontents.css";
 
 function JoinContents(){
 
-  let USER_INFO = "userInfo";
+  const USER_INFO = "userInfo";
 
   const userInfo = [];
 
@@ -78,22 +78,33 @@ function JoinContents(){
   }
 
   function submitId(){
-    let USER_INFO = "userInfo";
-
     let USER_ID = document.querySelector(".user-id");
     let IdValue = USER_ID.value;
-    let loadInfo = localStorage.getItem("userInfo");
-    let parsedInfo = JSON.parse(loadInfo);
-
 
     if(IdValue === ""){
       alert("아이디를 입력해주세요.");
-    // } else if(IdValue === existId){
-
-    //   alert("이미 있는 아이디 입니다.");
     }
     else {
       countId(IdValue);
+    }
+  }
+
+  function LsId(){
+    let USER_ID = document.querySelector(".user-id");
+    let IdValue = USER_ID.value;
+    let IdError = document.querySelector(".id-error");
+
+    let loadInfo = localStorage.getItem("userInfo");
+    let parseInfo = JSON.parse(loadInfo);
+    
+    let filtered = parseInfo.filter(element => element.Id === IdValue);
+    console.log(filtered);
+    if(filtered != ""){
+      IdError.innerHTML = "이미 있는 아이디입니다.";
+      IdError.style.color = "red";
+    } else {
+      IdError.innerHTML = "아이디를 입력해주세요";
+      IdError.style.color = "black";
     }
   }
 
@@ -108,7 +119,7 @@ function JoinContents(){
               <tr>
                 <th scope="row">아이디</th>
                 <td className="input-container">
-                  <input minLength="4" maxLength="16" className="user-id" type="text" />
+                  <input minLength="4" maxLength="16" className="user-id" type="text" onKeyUp={LsId}/>
                   <div>
                     <p className="id-error">아이디를 입력해주세요</p>
                     <p className="guide">한글/영문/숫자, 4-16자</p>
