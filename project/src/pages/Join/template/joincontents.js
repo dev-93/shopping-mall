@@ -71,12 +71,17 @@ function JoinContents(){
     let loadInfo = localStorage.getItem("userInfo");
     let parseInfo = JSON.parse(loadInfo);
     
-    let filtered = parseInfo.filter(element => element.Id === IdValue);
+
     if(IdValue === ""){
       alert("아이디를 입력해주세요.");
     }
     else {
-      filtered != "" ? alert(`${IdValue}는 사용중인 아이디입니다.`) : countId(IdValue);
+      if (loadInfo === null) {
+        countId(IdValue);
+      } else {
+        let filtered = parseInfo.filter(element => element.Id === IdValue);
+        filtered != "" ? alert(`${IdValue}는 사용중인 아이디입니다.`) : countId(IdValue);
+      }
     }
   }
 
@@ -88,14 +93,16 @@ function JoinContents(){
     let loadInfo = localStorage.getItem("userInfo");
     let parseInfo = JSON.parse(loadInfo);
     
-    let filtered = parseInfo.filter(element => element.Id === IdValue);
+    if (loadInfo !== null) {
+      let filtered = parseInfo.filter(element => element.Id === IdValue);
 
-    if(filtered != ""){
-      IdError.innerHTML = "이미 있는 아이디입니다.";
-      IdError.style.color = "red";
-    } else {
-      IdError.innerHTML = "아이디를 입력해주세요";
-      IdError.style.color = "black";
+      if(filtered != ""){
+        IdError.innerHTML = "이미 있는 아이디입니다.";
+        IdError.style.color = "red";
+      } else {
+        IdError.innerHTML = "아이디를 입력해주세요";
+        IdError.style.color = "black";
+      }
     }
   }
 
