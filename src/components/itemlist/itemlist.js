@@ -13,7 +13,7 @@ const ItemList = [{
     image: "http://new-more.co.kr/web/product/big/20200115/821c7c2842a2de5f81dac310cff6f66f.webp",
     price: "75,000",
     details: "부담없이, 멋스럽고 내츄럴한 와이드 핏라인의 슬랙스.",
-    colors: ["black", "white", "red", "skyblue", "blown"],
+    colors: ["black", "white", "blown"],
     sizes: ["S", "M", "L", "XL"],
   },
   {
@@ -31,7 +31,7 @@ const ItemList = [{
     image: "http://new-more.co.kr/web/product/big/201910/5ddaa0bb27cf1c627854a047a54da3a0.gif",
     price: "59,000",
     details: "기획특가, 트렌디하게 착용하기 좋은 오버핏 라이더자켓",
-    colors: ["black", "white", "red", "skyblue", "blown"],
+    colors: ["black", "white", "skyblue", "blown"],
     sizes: ["S", "M", "L", "XL"],
   },
   {
@@ -40,8 +40,8 @@ const ItemList = [{
     image: "http://new-more.co.kr/web/product/big/20200113/636498baaef517566208f3fe6d16cfec.webp",
     price: "19,900",
     details: "트렌디하고 내츄럴한 루즈핏 라인의 긴팔티",
-    colors: ["black", "white", "red", "skyblue", "blown"],
-    sizes: ["S", "M", "L", "XL"],
+    colors: ["black"],
+    sizes: ["free size"],
   },
   {
     id: 5,
@@ -49,8 +49,8 @@ const ItemList = [{
     image: "http://new-more.co.kr/web/product/big/20200113/0dd80d16494816b25b6fed56f619b2a3.webp",
     price: "69,900",
     details: "군더더기 없는 깔끔한 디자인의 루즈핏 싱글자켓.",
-    colors: ["black", "white", "red", "skyblue", "blown"],
-    sizes: ["S", "M", "L", "XL"],
+    colors: ["beige", "black", "blown"],
+    sizes: ["free size"],
   },
 ]
 
