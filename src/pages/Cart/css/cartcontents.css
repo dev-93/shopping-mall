@@ -12,7 +12,8 @@
 }
 
 .ca_contents .contents .container {
-  margin-top: 30px;
+  width:350px;
+  margin: 30px auto 0 auto;
 }
 
 .ca_contents .contents .container .tab_box {
@@ -25,14 +26,14 @@
   clear: both;
 }
 
-.ca_contents .contents .container .tab_box .tab {
+.ca_contents .contents .container .tab_box button {
   float: left;
   margin-right: 20px;
   padding-bottom:8px;
   border-bottom:1px solid gray;
 }
 
-.ca_contents .contents .container .tab_box .tab:last-child {
+.ca_contents .contents .container .tab_box button:last-child {
   margin-right:0;
 }
 
