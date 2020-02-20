@@ -1,11 +1,14 @@
 import React from "react";
 import "../css/joincontents.css";
 import PhoneNumber from "./joinnum";
+import {useHistory} from "react-router-dom";
 
 function JoinContents(){
   const USER_INFO = "userInfo";
 
   const userInfo = [];
+
+  let history = useHistory();
 
   function saveInfo(IdValue, PwValue){
     let newId = userInfo.length + 1;
@@ -34,6 +37,7 @@ function JoinContents(){
       USER_ID.value  = "";
       USER_PW.value  = "";
       USER_PW_check.value  = "";
+      history.push("/");
     }
   }
 
