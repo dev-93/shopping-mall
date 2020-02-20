@@ -1,22 +1,68 @@
 import React from "react";
 import "../css/logincontents.css";
-import {Link} from "react-router-dom";
+import {Link, useHistory, Route, Redirect} from "react-router-dom";
 
 function LoginContents(){
   const USER_INFO = "userInfo";
 
+  const LOGIN_INFO = "loginInfo";
+  const loginInfo = [];
+
+  let history = useHistory();
+
+  // const fakeAuth = {
+  //   isAuthenticated: false,
+  //   authenticate(cb) {
+  //     fakeAuth.isAuthenticated = true;
+  //     setTimeout(cb, 100); // fake async
+  //   },
+  //   signout(cb) {
+  //     fakeAuth.isAuthenticated = false;
+  //     setTimeout(cb, 100);
+  //   }
+  // };
+
+  // function AuthRoute({ authenticated, component: Component, render, ...rest }) {
+  //   return (
+  //     <Route
+  //       {...rest}
+  //       render={props =>
+  //         authenticated ? (
+  //           render ? render(props) : <Component {...props} />
+  //         ) : (
+  //           <Redirect
+  //             to={{ pathname: '/login', state: { from: props.location } }}
+  //           />
+  //         )
+  //       }
+  //     />
+  //   );
+  // }
+
+  function saveLoginInfo(filtered, filteredPw) {
+    alert(`${filtered[0].Id}님 환영합니다.`);
+    const Obj = {
+      Id: filtered[0].Id,
+      Pw: filtered[0].Pw,
+    };
+    
+    loginInfo.push(Obj);
+    localStorage.setItem(LOGIN_INFO, JSON.stringify(loginInfo));
+    
+    history.push("/");
+  }
+
   function comparePw(filtered, loginPwValue){
     let filteredPw = filtered[0].Pw;
 
-    loginPwValue === filteredPw ? alert(`${filtered[0].Id}님 환영합니다.`) : alert("아이디 또는 비밀번호가 일치하지 않습니다.");
+    loginPwValue === filteredPw ? saveLoginInfo(filtered, filteredPw) : alert("아이디 또는 비밀번호가 일치하지 않습니다.");
   }
 
   function getInfo(loginIdValue, loginPwValue){
     let loadInfo = localStorage.getItem(USER_INFO);
     let parseInfo = JSON.parse(loadInfo);
-    
+
     let filtered = parseInfo.filter(element => element.Id === loginIdValue);
-    
     filtered == "" ? alert("아이디 또는 비밀번호가 일치하지 않습니다.") : comparePw(filtered, loginPwValue);
   }
 
