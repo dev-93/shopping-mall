@@ -64,7 +64,6 @@ const ItemContents = (props) => {
               <p className="amount">
                 <span>Amount</span>
                 <span>
-                  {/* <input type="number" placeholder="1" min="0" max="5" required/> */}
                   <span className="num">{Item}</span>
                   <button type="button" onClick={Plus}>+</button>
                   <button type="button" onClick={Minus}>-</button>
