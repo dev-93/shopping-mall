@@ -5,9 +5,21 @@ import ItemList from "../../../components/itemlist/itemlist";
 
 
 const ItemContents = (props) => {
-  const [Item, setItem] = useState(0);
-  const Plus = () =>  setItem(Item + 1);
+  const [Item, setItem] = useState(1);
+  const Plus = () => setItem(Item + 1);
   const Minus = () => setItem(Item - 1);
+
+
+  const ToCart = (props) => {
+    const color = document.querySelector(".color");
+    const color_select = color.querySelector("select");
+
+    const size = document.querySelector(".size");
+    const size_select = size.querySelector("select");
+
+    (color_select.value === "*" || size_select.value === "*") 
+      ? alert ("필수항목을 선택해주세요") : alert("장바구니에 담겼습니다");
+  }
 
   const {id} = useParams();
   return (
@@ -66,7 +78,7 @@ const ItemContents = (props) => {
                 <button type="button">buy</button>
               </li>
               <li>
-                <button type="button">cart</button>
+                <button type="button" onClick={ToCart}>cart</button>
               </li>
             </ul>
           </div>
