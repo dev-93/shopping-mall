@@ -8,4 +8,13 @@
 
 .cart_table tr > *{
     border:1px solid gray;
+    padding:5px 0;
+}
+
+.cart_table .quantity span {
+    margin-right:10px;
+}
+
+.cart_table .quantity button{
+    border:1px solid gray;
 }
