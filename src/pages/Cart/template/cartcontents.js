@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import "../css/cartcontents.css"
-import CartList from "../../../components/cartlist/cartlist"
+import "../css/cartcontents.css";
+import CartList from "../../../components/cartlist/cartlist";
+import CartItem from "./cartItem";
 
 
 const useTabs = (initialTab, allTabs) => {
@@ -25,6 +26,8 @@ function CartContents() {
                 (<button onClick={() => changeItem(index)} key={tabs.id}>{tabs.tab}</button>
               ))}
             </div>
+
+            <CartItem />
             
             <div className="cart_box">
                 <div className="empty_cart">{currentItem.content}</div>
