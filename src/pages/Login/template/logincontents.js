@@ -10,35 +10,6 @@ function LoginContents(){
 
   let history = useHistory();
 
-  // const fakeAuth = {
-  //   isAuthenticated: false,
-  //   authenticate(cb) {
-  //     fakeAuth.isAuthenticated = true;
-  //     setTimeout(cb, 100); // fake async
-  //   },
-  //   signout(cb) {
-  //     fakeAuth.isAuthenticated = false;
-  //     setTimeout(cb, 100);
-  //   }
-  // };
-
-  // function AuthRoute({ authenticated, component: Component, render, ...rest }) {
-  //   return (
-  //     <Route
-  //       {...rest}
-  //       render={props =>
-  //         authenticated ? (
-  //           render ? render(props) : <Component {...props} />
-  //         ) : (
-  //           <Redirect
-  //             to={{ pathname: '/login', state: { from: props.location } }}
-  //           />
-  //         )
-  //       }
-  //     />
-  //   );
-  // }
-
   function saveLoginInfo(filtered, filteredPw) {
     alert(`${filtered[0].Id}님 환영합니다.`);
     const Obj = {
