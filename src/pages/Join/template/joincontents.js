@@ -146,18 +146,6 @@ function JoinContents(){
                   </div>
                 </td>
               </tr>
-              <tr className="phone">
-                <th scope="row">핸드폰</th>
-                <td>
-                  <select name="mobile_num" >
-                    <PhoneNumber />
-                  </select>
-                  -
-                  <input maxLength="4" type="text" />
-                  -
-                  <input maxLength="4" type="text" />
-                </td>
-              </tr>
             </tbody>
           </table>
           <button type="button" className="bt_join" onClick={submitId}>가입하기</button>
