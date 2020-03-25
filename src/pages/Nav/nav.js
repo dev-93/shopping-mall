@@ -1,19 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './css/nav.css';
 import {Link} from "react-router-dom";
 
 function Nav() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const logout = () => {
+    setIsLoggedIn({isLoggedIn:true});
+  }
+
   return (
     <>
       <div id="left-menu">
         <h1 className="logo">
           <Link to="/">NAMI</Link>
         </h1>
-
         <div className="my-box">
           <ul className="table">
             <li className="table-cell">
-              <Link to="/login">LOGIN</Link>
+              {
+                isLoggedIn ? <button type="button" onClick={logout}>LOGOUT</button> : <Link to="/login">LOGIN</Link> 
+              }
             </li>
             <li className="table-cell">
               <Link to="/join">JOIN</Link>
