@@ -1,0 +1,44 @@
+.cart_table {
+    margin: 50px auto 0 auto;
+    width: 600px;
+    max-height:400px;
+    overflow-y: auto;
+}
+
+.cart_table>.head,
+.cart_table>.body {
+    display: flex;
+    height:100%;
+}
+
+.cart_table .contents {
+    border: 1px solid gray;
+    width: 30%;
+    padding: 8px 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.cart_table .contents span, .cart_table .contents input{
+    align-self: center;
+}
+
+.cart_table .image img{
+    width:50%;
+}
+
+.cart_table .quantity {
+    position: relative;
+}
+
+.cart_table .check_box {
+    width: 5%;
+}
+
+.cart_table .counter input {
+    max-width: 50px;
+    text-align: center;
+    background: none;
+    border: none;
+}

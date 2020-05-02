@@ -1,20 +1,20 @@
 import React, {useState} from 'react';
 import "../css/cartcontents.css";
-import CartList from "../../../components/cartlist/cartlist";
-import CartItem from "./cartItem";
-
-
-const useTabs = (initialTab, allTabs) => {
-  const [currentIndex, setCurrentIndex] = useState(initialTab);
-  return {
-    currentItem: allTabs[currentIndex],
-    changeItem: setCurrentIndex
-  };
-}
+import OderBox from "./oderbox";
 
 function CartContents() {
-  const {currentItem ,changeItem} = useTabs(0, CartList);
+  const [isdomestic ,setDomestic] = useState(true);
+  const [isoverseas ,setOverseas] = useState(false);
 
+  const domesticTab = () => {
+    setDomestic(true);
+    setOverseas(false)
+  }
+
+  const overseasTab = () => {
+    setDomestic(false);
+    setOverseas(true)
+  }
   return (
     <>
       <div className="wrap ca_contents">
@@ -22,15 +22,18 @@ function CartContents() {
           <h3 className="title">CART</h3>
           <div className="container">
             <div className="tab_box">
-              {CartList.map((tabs, index) => 
-                (<button onClick={() => changeItem(index)} key={tabs.id}>{tabs.tab}</button>
-              ))}
+                <button onClick={domesticTab}>국내상품</button>
+                <button onClick={overseasTab}>해외상품</button>
             </div>
-
-            <CartItem />
             
             <div className="cart_box">
-                <div className="empty_cart">{currentItem.content}</div>
+            {
+              isdomestic && <OderBox />
+            }
+
+            {
+              isoverseas && <OderBox />
+            }
             </div>
 
             <div className="bt_box">
