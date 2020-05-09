@@ -4,15 +4,7 @@ import "../css/oderbox.css"
 
 export default function OderBox(){
     const [quantity, setQuantity] = useState(1);
-
-    const Plus = () => {
-        (quantity < 100) && setQuantity(quantity+ 1);
-    }
-
-    const Minus = () => {
-        return ((quantity> 1 ) ? setQuantity(quantity- 1) : alert("수량을 확인해주세요."));
-    }
-
+    
     return (
         <>
             {
@@ -40,15 +32,15 @@ export default function OderBox(){
                                         <span>{list.price}</span>
                                     </div>
                                     <div className="contents counter">
-                                        <input 
-                                            id="count" 
-                                            value={quantity}
-                                            disabled
-                                        />
-                                        <button type="button" onClick={Plus}>
+                                        <span>{quantity}</span>
+                                        <button type="button" onClick={() => {
+                                            (quantity < 100) && setQuantity(quantity+ 1);
+                                        }}>
                                             <span>+</span>
                                         </button>
-                                        <button type="button" onClick={Minus}>
+                                        <button type="button" onClick={() => {
+                                            return ((quantity> 1 ) ? setQuantity(quantity- 1) : alert("수량을 확인해주세요."));
+                                        }}>
                                             <span>-</span>
                                         </button>
                                     </div>
