@@ -1,17 +1,23 @@
 import React from "react";
+import FakeAuth from "../../../route/Auth";
 import "../css/logincontents.css";
-import {Link, useHistory, Route, Redirect} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 
 function LoginContents(){
+  let history = useHistory();
+
   const USER_INFO = "userInfo";
 
   const LOGIN_INFO = "loginInfo";
   const loginInfo = [];
 
-  let history = useHistory();
+  function saveLoginInfo(filtered) {
+    FakeAuth.authenticate();
 
-  function saveLoginInfo(filtered, filteredPw) {
     alert(`${filtered[0].Id}님 환영합니다.`);
+    
+    // fakeAuth.authenticate();
+
     const Obj = {
       Id: filtered[0].Id,
       Pw: filtered[0].Pw,
@@ -20,7 +26,7 @@ function LoginContents(){
     loginInfo.push(Obj);
     localStorage.setItem(LOGIN_INFO, JSON.stringify(loginInfo));
     
-    history.push("/");
+    history.push("/logined");
   }
 
   function comparePw(filtered, loginPwValue){
@@ -73,7 +79,7 @@ function LoginContents(){
 
           <div className="bt-box">
             <button type="button" onClick={checkId} className="bt">
-              Sign In
+              Log In
             </button>
             <Link to="/join" className="bt">
               Sign Up

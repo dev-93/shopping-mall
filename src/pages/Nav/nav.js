@@ -1,13 +1,16 @@
 import React, {useState} from 'react';
+import FakeAuth from "../../route/Auth";
 import './css/nav.css';
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 
 function Nav() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const logout = () => {
-    setIsLoggedIn({isLoggedIn:true});
-  }
+  // const logout = () => {
+  //   setIsLoggedIn({isLoggedIn:true});
+  // }
+
+  let history = useHistory();
 
   return (
     <>
@@ -18,8 +21,21 @@ function Nav() {
         <div className="my-box">
           <ul className="table">
             <li className="table-cell">
-              {
+              {/* {
                 isLoggedIn ? <button type="button" onClick={logout}>LOGOUT</button> : <Link to="/login">LOGIN</Link> 
+              }*/}
+              { 
+               FakeAuth.isAuthenticated ? (
+                  <button
+                    onClick={() => {
+                      FakeAuth.signout(() => history.push("/"))
+                    }}
+                  >
+                    <span>LOGOUT</span>
+                  </button>
+                ) : (
+                  <Link to="/login">LOGIN</Link>
+                )
               }
             </li>
             <li className="table-cell">
